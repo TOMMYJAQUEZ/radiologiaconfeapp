@@ -1,0 +1,33 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Imágenes públicas (radiografías, anatomía)
+    match /public/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth.token.rol == 'admin' && 
+                      request.resource.size < 10 * 1024 * 1024 && // 10MB max
+                      request.resource.contentType in ['image/jpeg', 'image/png', 'image/webp'];
+    }
+    
+    // Avatares de usuarios
+    match /avatars/{userId}/{fileName} {
+      allow read: if request.auth != null;
+      allow create: if request.auth.uid == userId && 
+                       request.resource.size < 5 * 1024 * 1024 && // 5MB max
+                       request.resource.contentType in ['image/jpeg', 'image/png'];
+      allow update, delete: if request.auth.uid == userId;
+    }
+    
+    // Área de carga del admin
+    match /admin/{userId}/{allPaths=**} {
+      allow read, write: if request.auth.token.rol == 'admin' && 
+                            request.auth.uid == userId;
+    }
+    
+    // Default: denegar todo
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
