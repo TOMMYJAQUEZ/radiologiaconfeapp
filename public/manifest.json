@@ -1,0 +1,88 @@
+{
+  "name": "Radiología con Fe",
+  "short_name": "Radiología Fe",
+  "description": "Aplicación educativa para aprendizaje de radiología con gamificación. Fe que guía, Ciencia que transforma.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#FFD700",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot-2.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Modo Estudio",
+      "short_name": "Estudio",
+      "description": "Acceso rápido al modo de estudio sin presión",
+      "url": "/estudio",
+      "icons": [
+        {
+          "src": "/icons/estudio-icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Modo Quiz",
+      "short_name": "Quiz",
+      "description": "Acceso rápido a los quizzes",
+      "url": "/quiz",
+      "icons": [
+        {
+          "src": "/icons/quiz-icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Anatomía",
+      "short_name": "Anatomía",
+      "description": "Visualización interactiva de sistemas anatómicos",
+      "url": "/anatomia",
+      "icons": [
+        {
+          "src": "/icons/anatomia-icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "categories": ["education", "medical"],
+  "orientation": "portrait-primary"
+}
