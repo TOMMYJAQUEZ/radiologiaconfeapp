@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Radiología con Fe</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="../css/design-system.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <!-- Logo y Bienvenida -->
+        <div class="login-header">
+            <img src="/assets/images/logo.svg" alt="Logo" class="login-logo">
+            <h1>Radiología con Fe</h1>
+            <p class="tagline">Fe que guía, Ciencia que transforma</p>
+        </div>
+
+        <!-- Personaje Dr. Juan -->
+        <div class="login-character">
+            <img src="/assets/images/doctor-juan.svg" alt="Dr. Juan" class="doctor-image">
+            <h2 id="greeting">¡Hola, Bienvenido!</h2>
+        </div>
+
+        <!-- Formulario Login -->
+        <form id="login-form" class="login-form">
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="tu@correo.com"
+                    required
+                    aria-label="Correo electrónico"
+                >
+                <span id="email-error" class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Mínimo 8 caracteres"
+                    required
+                    aria-label="Contraseña"
+                >
+                <span id="password-error" class="error-message" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">
+                INICIAR SESIÓN
+            </button>
+        </form>
+
+        <!-- Divisor -->
+        <div class="divider">o continúa con</div>
+
+        <!-- Google Login -->
+        <button id="google-login" class="btn btn-secondary btn-large">
+            <span>🔐 Continuar con Google</span>
+        </button>
+
+        <!-- Links adicionales -->
+        <div class="login-footer">
+            <a href="#" id="forgot-password" class="link">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Error General -->
+        <div id="general-error" class="alert alert-error" style="display: none;" role="alert">
+            <span id="error-text"></span>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="../../config/firebase-config.js"></script>
+    <script src="../js/controllers/auth-controller.js"></script>
+</body>
+</html>

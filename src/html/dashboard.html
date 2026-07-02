@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Radiología con Fe</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="../css/design-system.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Radiología con Fe</h1>
+                <button id="logout-btn" class="btn btn-ghost">Salir</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Bienvenida -->
+            <section class="welcome-section">
+                <div class="welcome-card">
+                    <h2 id="user-greeting">¡Hola, Juan!</h2>
+                    <p id="user-status">Grupo: Agosto 2026 | Acceso: Activo</p>
+                </div>
+            </section>
+
+            <!-- Progreso Nivel -->
+            <section class="progress-section">
+                <h3>Progreso Nivel</h3>
+                <div class="progress-card">
+                    <div class="level-display">
+                        <span id="current-level" class="level-badge">12</span>
+                        <div class="progress-info">
+                            <div class="progress-bar">
+                                <div id="xp-progress" class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <p id="xp-text">2,450 / 3,000 XP</p>
+                        </div>
+                    </div>
+                    <p class="next-level">Siguiente nivel: 550 XP</p>
+                </div>
+            </section>
+
+            <!-- Racha -->
+            <section class="streak-section">
+                <div class="streak-card">
+                    <div class="streak-display">
+                        <span class="flame-icon">🔥</span>
+                        <div>
+                            <h3>Racha Actual</h3>
+                            <p id="streak-count">7 días</p>
+                        </div>
+                    </div>
+                    <p class="streak-hint">Próximo logro: 10 días</p>
+                </div>
+            </section>
+
+            <!-- Estadísticas Generales -->
+            <section class="stats-section">
+                <h3>Estadísticas Generales</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Quizzes</span>
+                        <span class="stat-value">32</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Promedio</span>
+                        <span class="stat-value">82%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Últimos 7 días</span>
+                        <span class="stat-value">5</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Racha Máxima</span>
+                        <span class="stat-value">15 días</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Acciones Rápidas -->
+            <section class="actions-section">
+                <h3>Acciones Rápidas</h3>
+                <div class="actions-grid">
+                    <button class="btn btn-primary btn-large" onclick="navigateTo('quiz')">
+                        ¿ COMENZAR QUIZ
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="navigateTo('anatomia')">
+                        📚 ESTUDIAR
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="navigateTo('achievements')">
+                        🏆 LOGROS
+                    </button>
+                </div>
+            </section>
+
+            <!-- Rendimiento por Tema -->
+            <section class="performance-section">
+                <h3>Rendimiento por Tema</h3>
+                <div class="performance-list">
+                    <div class="performance-item">
+                        <span class="topic-name">Cráneo</span>
+                        <div class="progress-bar small">
+                            <div class="progress-fill" style="width: 85%; background: var(--color-success);"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="performance-item">
+                        <span class="topic-name">Tórax</span>
+                        <div class="progress-bar small">
+                            <div class="progress-fill" style="width: 78%; background: var(--color-info);"></div>
+                        </div>
+                        <span class="percentage">78%</span>
+                    </div>
+                    <div class="performance-item">
+                        <span class="topic-name">Abdomen</span>
+                        <div class="progress-bar small">
+                            <div class="progress-fill" style="width: 92%; background: var(--color-success);"></div>
+                        </div>
+                        <span class="percentage">92%</span>
+                    </div>
+                    <div class="performance-item">
+                        <span class="topic-name">Pelvis</span>
+                        <div class="progress-bar small">
+                            <div class="progress-fill" style="width: 70%; background: var(--color-warning);"></div>
+                        </div>
+                        <span class="percentage">70%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Últimos Quizzes -->
+            <section class="recent-section">
+                <h3>Últimos Quizzes</h3>
+                <div class="recent-list">
+                    <div class="recent-item">
+                        <span class="status-icon">✅</span>
+                        <div class="item-content">
+                            <p class="item-title">Cráneo</p>
+                            <p class="item-meta">25/30 - Hoy, 14:30</p>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <span class="status-icon">✅</span>
+                        <div class="item-content">
+                            <p class="item-title">Tórax</p>
+                            <p class="item-meta">23/30 - Ayer, 10:15</p>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <span class="status-icon">❌</span>
+                        <div class="item-content">
+                            <p class="item-title">Abdomen</p>
+                            <p class="item-meta">15/20 - Martes, 9:00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="#" class="nav-item" data-page="anatomia">
+                <span class="nav-icon">📚</span>
+                <span class="nav-label">Estudio</span>
+            </a>
+            <a href="#" class="nav-item" data-page="quiz">
+                <span class="nav-icon">❓</span>
+                <span class="nav-label">Quiz</span>
+            </a>
+            <a href="#" class="nav-item" data-page="perfil">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    <script src="../../config/firebase-config.js"></script>
+    <script src="../js/controllers/dashboard-controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* Clases de Animación */
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) var(--timing-function);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-normal) var(--timing-function);
+}
+
+.animate-bounce {
+  animation: bounce var(--transition-slow) var(--timing-function) infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s var(--timing-function) infinite;
+}
+
+.animate-glow {
+  animation: glow 2s var(--timing-function) infinite;
+}
+
+/* Transiciones de Página */
+
+.page-enter {
+  animation: slideUp var(--transition-normal) var(--timing-function);
+}
+
+.page-exit {
+  animation: fadeIn var(--transition-normal) var(--timing-function) reverse;
+}
+
+/* Transiciones de Card */
+
+.card-hover {
+  transition: all var(--transition-normal) var(--timing-function);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Smooth Scroll */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transiciones de Color */
+
+.transition-colors {
+  transition: background-color var(--transition-normal) var(--timing-function),
+              color var(--transition-normal) var(--timing-function),
+              border-color var(--transition-normal) var(--timing-function);
+}
+
+/* Transiciones de Transform */
+
+.transition-transform {
+  transition: transform var(--transition-normal) var(--timing-function);
+}
+
+/* Transiciones de Shadow */
+
+.transition-shadow {
+  transition: box-shadow var(--transition-normal) var(--timing-function);
+}
