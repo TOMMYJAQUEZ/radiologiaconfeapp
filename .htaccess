@@ -1,0 +1,18 @@
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Archivos estaticos de Next.js
+  RewriteRule ^_next/static/(.*)$ .next/static/$1 [L]
+  RewriteRule ^_next/(.*)$        .next/$1         [L]
+
+  # Archivos estaticos de /public
+  RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
+  RewriteRule ^(.*)$              public/$1        [L]
+
+  # Redireccionar el resto al servidor Node.js de Hostinger
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
+</IfModule>
