@@ -10,7 +10,7 @@ const nextConfig = {
       },
     ],
   },
-  output: 'standalone',
+  ...(process.env.BUILD_STANDALONE === 'true' ? { output: 'standalone' } : {}),
   // Headers de seguridad
   async headers() {
     return [
