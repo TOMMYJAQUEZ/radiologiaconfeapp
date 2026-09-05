@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/postbuild.js",
     "build:hostinger": "node scripts/build-hostinger.js",
-    "start": "node scripts/start.js",
+    "start": "next start",
+    "start:hostinger": "node scripts/start.js",
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch"
